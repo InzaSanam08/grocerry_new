@@ -13,6 +13,15 @@ class home_menu extends StatefulWidget {
 class _home_menuState extends State<home_menu> {
   var mqHeight;
   var mqwidth;
+
+  List img = [
+    'lib/assets/vegImage/Bitmap.svg',
+    'lib/assets/vegImage/escarole_commodity-page-removebg-preview 1.svg',
+    'lib/assets/vegImage/image 1.svg',
+    'lib/assets/vegImage/image 1.svg',
+    'lib/assets/vegImage/image 1.svg'
+  ];
+
   @override
   Widget build(BuildContext context) {
     mqHeight = MediaQuery.of(context).size.height;
@@ -121,6 +130,9 @@ class _home_menuState extends State<home_menu> {
             ),
           ),
           SizedBox(
+            height: 30,
+          ),
+          SizedBox(
             height: 270,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -148,7 +160,7 @@ class _home_menuState extends State<home_menu> {
                             backgroundColor: Colors.white,
                             child: Icon(
                               Icons.favorite,
-                              color: Colors.red,
+                              color: const Color.fromARGB(255, 250, 20, 4),
                             ),
                           ),
                         ),
@@ -193,6 +205,9 @@ class _home_menuState extends State<home_menu> {
               },
             ),
           ),
+          SizedBox(
+            height: 30,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 20, top: 20),
             child: Text('Hot Sale',
@@ -201,34 +216,42 @@ class _home_menuState extends State<home_menu> {
                     fontSize: 20,
                     fontWeight: FontWeight.w600)),
           ),
-          Expanded(
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-              ),
-              itemCount: 3,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  color: Colors.red,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'lib/assets/strawberry.jpeg',
-                        height: 95,
-                        width: 80.42,
-                      ),
-                      Text(
-                        'Apple',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+          SizedBox(
+            height: 50,
+          ),
+          SizedBox(
+            height: 100,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(left: 30, right: 30),
+                  child: Container(
+                    height: 110,
+                    width: 87,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF383838),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'lib/assets/strawberry.jpeg',
+                          height: 52,
+                          width: 58,
                         ),
-                      ),
-                    ],
+                        Text(
+                          'berry',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
