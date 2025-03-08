@@ -201,61 +201,39 @@ class _home_menuState extends State<home_menu> {
                     fontSize: 20,
                     fontWeight: FontWeight.w600)),
           ),
-          // GridView(
-          //   gridDelegate:
-          //       SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-          //   children: [
-          //     Padding(
-          //       padding: const EdgeInsets.only(top: 10, left: 20),
-          //       child: Container(
-          //         decoration: BoxDecoration(
-          //           color: Color(0xFF383838),
-          //           borderRadius: BorderRadius.circular(10),
-          //         ),
-          //         height: 263,
-          //         width: 219,
-          //         child: Stack(
-          //           children: [
-          //             Positioned(
-          //               top: 10,
-          //               right: 10,
-          //               child: CircleAvatar(
-          //                 radius: 20,
-          //                 backgroundColor: Colors.white,
-          //                 child: Icon(
-          //                   Icons.favorite,
-          //                   color: Colors.red,
-          //                 ),
-          //               ),
-          //             ),
-          //             Positioned(
-          //               // top: 10,
-          //               // left: 10,
-          //               // right: 10,
-          //               child: Image.asset(
-          //                 'lib/assets/download.png',
-          //                 height: 95,
-          //                 width: 80.42,
-          //               ),
-          //             ),
-          //             Positioned(
-          //               bottom: 10,
-          //               left: 7,
-          //               child: Text(
-          //                 'Apple',
-          //                 style: TextStyle(
-          //                   color: Colors.white,
-          //                   fontSize: 20,
-          //                   fontWeight: FontWeight.bold,
-          //                 ),
-          //               ),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //     )
-          //   ],
-          // )
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  color: Colors.red,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'lib/assets/strawberry.jpeg',
+                        height: 95,
+                        width: 80.42,
+                      ),
+                      Text(
+                        'Apple',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
