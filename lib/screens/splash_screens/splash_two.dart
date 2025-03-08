@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
-import 'package:groceryapp/assets/app_colors.dart';
+import 'package:groceryapp/components/app_colors.dart';
 import 'package:groceryapp/screens/login_screen/login_first.dart';
 import 'package:groceryapp/widgets/custum_containers.dart';
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
-import 'package:groceryapp/assets/app_colors.dart';
+import 'package:groceryapp/components/app_colors.dart';
+import 'package:groceryapp/modal/modal.dart';
 
 class home_menu extends StatefulWidget {
   const home_menu({super.key});
@@ -19,6 +20,7 @@ class _home_menuState extends State<home_menu> {
     return Scaffold(
       backgroundColor: App_colors.background_color,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
               padding: EdgeInsets.only(top: mqHeight * 0.050),
@@ -114,17 +116,146 @@ class _home_menuState extends State<home_menu> {
                           style: TextStyle(color: Colors.white, fontSize: 20),
                         )),
                   )
-
-
-
-
-
-
-
                 ],
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 270,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 5,
+              itemBuilder: (BuildContext context, int index) {
+                return
+
+                    // ...existing code...
+                    Padding(
+                  padding: const EdgeInsets.only(top: 10, left: 20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFF383838),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    height: 263,
+                    width: 219,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          top: 10,
+                          right: 10,
+                          child: CircleAvatar(
+                            radius: 20,
+                            backgroundColor: Colors.white,
+                            child: Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 50,
+                          left: 17,
+                          child: Image.asset(
+                            'lib/assets/download.png',
+                            height: 130,
+                            width: 179,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 10,
+                          left: 10,
+                          child: Text(
+                            Product.products[index].name,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 10,
+                          right: 10,
+                          child: Text(
+                            Product.products[index].price.toString(),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+// ...existing code...
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, top: 20),
+            child: Text('Hot Sale',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600)),
+          ),
+          // GridView(
+          //   gridDelegate:
+          //       SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+          //   children: [
+          //     Padding(
+          //       padding: const EdgeInsets.only(top: 10, left: 20),
+          //       child: Container(
+          //         decoration: BoxDecoration(
+          //           color: Color(0xFF383838),
+          //           borderRadius: BorderRadius.circular(10),
+          //         ),
+          //         height: 263,
+          //         width: 219,
+          //         child: Stack(
+          //           children: [
+          //             Positioned(
+          //               top: 10,
+          //               right: 10,
+          //               child: CircleAvatar(
+          //                 radius: 20,
+          //                 backgroundColor: Colors.white,
+          //                 child: Icon(
+          //                   Icons.favorite,
+          //                   color: Colors.red,
+          //                 ),
+          //               ),
+          //             ),
+          //             Positioned(
+          //               // top: 10,
+          //               // left: 10,
+          //               // right: 10,
+          //               child: Image.asset(
+          //                 'lib/assets/download.png',
+          //                 height: 95,
+          //                 width: 80.42,
+          //               ),
+          //             ),
+          //             Positioned(
+          //               bottom: 10,
+          //               left: 7,
+          //               child: Text(
+          //                 'Apple',
+          //                 style: TextStyle(
+          //                   color: Colors.white,
+          //                   fontSize: 20,
+          //                   fontWeight: FontWeight.bold,
+          //                 ),
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       ),
+          //     )
+          //   ],
+          // )
         ],
       ),
     );

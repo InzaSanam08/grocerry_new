@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
-// https://pub.dev/packages/flutter_svg_image
-import 'package:groceryapp/assets/app_colors.dart';
+import 'package:groceryapp/components/app_colors.dart';
 import 'package:groceryapp/screens/splash_screens/splash_two.dart';
 // import 'package:groceryapp/widgets/custum_buttons.dart';
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
-import 'package:groceryapp/assets/app_colors.dart';
+import 'package:groceryapp/components/app_colors.dart';
 import 'package:groceryapp/widgets/custum_containers.dart';
 import 'package:groceryapp/widgets/custum_textFormField.dart';
 
